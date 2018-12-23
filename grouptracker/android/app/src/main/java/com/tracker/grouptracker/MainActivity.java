@@ -1,4 +1,4 @@
-package com.example.authentication;
+package com.tracker.grouptracker;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

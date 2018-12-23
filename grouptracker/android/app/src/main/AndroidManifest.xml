@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.authentication">
+    package="com.tracker.grouptracker">
 
     <!-- The INTERNET permission is required for development. Specifically,
          flutter needs it to communicate with the running application
@@ -21,7 +21,7 @@
         android:icon="@mipmap/ic_launcher"> 
         <meta-data 
             android:name="com.google.android.geo.API_KEY" 
-            android:value="<YOUR_API_KEY>: Maps SDK for Android, or try setting up with IOS Maps SDK if you wish. (Currently app is only configured for android)" />
+            android:value="<YOUR_API_KEY> (Android Maps SDK)" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

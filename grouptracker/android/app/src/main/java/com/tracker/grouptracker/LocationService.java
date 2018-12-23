@@ -1,4 +1,4 @@
-package com.example.authentication;
+package com.tracker.grouptracker;
 
 import android.content.Intent;
 import android.app.Service;
@@ -42,28 +42,24 @@ public class LocationService extends Service {
             int locationChanges = 0;
 
             public void onLocationChanged(Location location) {
-                //locationChanges++;
 
-                //if (locationChanges >= 0 && locationChanges % 1 == 0){ // Change as necessary
-                    // Update database
-                    //System.out.println("Change Location, " + Double.toString(locationChanges) + " :::::::::::::::::::::");
-                    
-                    FirebaseAuth auth = FirebaseAuth.getInstance();
-                    FirebaseUser currentUser = auth.getCurrentUser();
-                    DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users");
-                    
-                    if (currentUser != null){
-                        Date currentDate = new Date();
-                        DateFormat formatter = new SimpleDateFormat("dd-MM-yy");
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                FirebaseUser currentUser = auth.getCurrentUser();
+                DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users");
+                
+                if (currentUser != null){
+                    Date currentDate = new Date();
+                    DateFormat dateFormatter = new SimpleDateFormat("dd-MM-yy");
+                    DateFormat timeFormatter = new SimpleDateFormat("HH:mm");
 
-                        Map newLocData = new HashMap<>();
-                        newLocData.put("latitude", location.getLatitude());
-                        newLocData.put("longitude", location.getLongitude());
-                        newLocData.put("updated", formatter.format(currentDate));
+                    Map newLocData = new HashMap<>();
+                    newLocData.put("latitude", location.getLatitude());
+                    newLocData.put("longitude", location.getLongitude());
+                    newLocData.put("updated", dateFormatter.format(currentDate) 
+                    + " " + timeFormatter.format(currentDate));
 
-                        usersRef.child(currentUser.getUid()).child("location").setValue(newLocData);
-                    }
-                //}
+                    usersRef.child(currentUser.getUid()).child("location").setValue(newLocData);
+                }
             }
 
             public void onStatusChanged(String provider, int status, Bundle extras) {}
