@@ -12,3 +12,4 @@ GroupTracker is an application built to triangulate user's location and then sto
 - Has the options of a blue or green theme.
 - Usename, email and fullname can be easily updated at any time.
 - Smaller than the average Android app, at only 7.7 MB vs the 11.5 MB average when built for release.
+- Currently only supports Android, Apple forces the use of a Mac for IOS development (I don't have one).
