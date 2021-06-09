@@ -2,7 +2,7 @@
 GroupTracker is an application built to triangulate user's location and then store the coordinates on a database, allowing the user's friends to see exactly where they are located on a map.
 
 ## Program Details
-- Uses the amazing Flutter framework with DartLang.
+- Uses the Flutter framework with DartLang.
 - Implements mapping technology provided by the google maps API.
 - Full user authentication capabilites.
 - Utilizes Firebase OAuth Authentication and Firebase Realtime Database.
